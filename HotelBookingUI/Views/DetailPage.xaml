@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncListView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:syncAvatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="HotelBookingUI.Views.DetailPage"
+             Title="DetailPage">
+     <!-- Main layout -->
+     <Grid RowDefinitions="*"
+           ColumnDefinitions="Auto,*"
+           Margin="0,-120,0,50"> 
+            <!-- Step 1:  Rounded border & Floating Buttons-->
+            <ScrollView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Never">   
+                 <Grid RowDefinitions="Auto,*">
+                    <!-- Main Image-->
+                    <Image Grid.Row="0" Source="hotelmodel.jpeg"
+                           Aspect="AspectFill"
+                           VerticalOptions="Start" 
+                           HeightRequest="380"/>
+
+                     <!-- White box with rounded edges-->
+                     <Frame Grid.Row="1" CornerRadius="40" HasShadow="False" Margin="0,-40,0,0" BorderColor="Transparent">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                              ColumnDefinitions="*,Auto" Padding="20,20,20,60">
+
+                            <!-- Step 2: Hotel Descripcion-->
+
+                            <!--Hotel name-->
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="Hotel LigthSky"
+                                   FontSize="22"/>
+
+                            <!--Price-->
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="128$"
+                                   HorizontalTextAlignment="End"
+                                   FontSize="22"/> 
+
+                            <!--Price description-->
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   Text="per person"
+                                   Margin="0,10,0,0"
+                                   TextColor="Silver"/>
+
+                            <!--Hotel description-->
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="2 guest 1 bedroom 1 bath"
+                                   Margin="0,10,0,0"
+                                   TextColor="Silver"/>
+                       
+                            <!--Reviewers list-->
+                            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderColor="Transparent" CornerRadius="10" HasShadow="False" BackgroundColor="#f2f6fc" HeightRequest="80" Margin="0,35">
+                                <Grid RowDefinitions="*,*" ColumnDefinitions="Auto,*,Auto">
+                                    <!-- Start icons-->
+                                    <Label Grid.Row="0" Grid.Column="0" Text="⭐⭐⭐⭐"/>
+                                     <!-- Start description-->
+                                    <Label Grid.Row="1" Grid.Column="0" Text="129 reviews" VerticalTextAlignment="Center" TextColor="#70747a"/>
+                                     <!-- Arrow icon-->
+                                    <Image Grid.Row="1" Grid.Column="1" Source="arrow" HorizontalOptions="Start"/>
+                                    
+                             <!--Avatar collections--> 
+                             <syncListView:SfListView Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" 
+                                    ItemsSource="{Binding Reviews}"
+                                    SelectionBackground="Transparent"
+                                    ItemSpacing="-9" 
+                                    WidthRequest="140"
+                                    ScrollBarVisibility="Never" 
+                                    Orientation="Horizontal">
+                                        <syncListView:SfListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="5,0,0,0">
+                                                     <syncAvatar:SfAvatarView 
+                                                        ContentType="Default"
+                                                        Padding="5"
+                                                        ImageSource="{Binding Picture}"  
+                                                        Stroke="Transparent"
+                                                        WidthRequest="50"
+                                                        HeightRequest="50"
+                                                        CornerRadius="25"/>
+                                               </Grid>
+                                            </DataTemplate>
+                                        </syncListView:SfListView.ItemTemplate>
+                                    </syncListView:SfListView> 
+                                </Grid>
+                            </Frame>
+
+                            <!-- Step 3: Hotel Offers-->
+                            <!-- Offers: Title -->
+                            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="What this place offers" 
+                                   FontAttributes="Bold"
+                                   FontSize="18"/>
+
+                            <!-- Offers: More -->
+                            <Label Grid.Row="3" Grid.Column="1"
+                                   Text="More" 
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="End"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="#3394ee"/>
+
+                            <!-- Offer collection-->
+                            <syncListView:SfListView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="0,15,0,0"
+                                ItemsSource="{Binding Services}"
+                                ItemSize="100"
+                                ItemSpacing="10"
+                                SelectionBackground="Transparent"
+                                ScrollBarVisibility="Never" 
+                                HeightRequest="120"
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal">
+                                  <syncListView:SfListView.ItemTemplate>
+                                       <DataTemplate>  
+                                                <Border WidthRequest="100"
+                                                        StrokeShape="RoundRectangle 15,15,15,15">
+                                                        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                                                            <Image Source="{Binding Picture}" HeightRequest="45"/>
+                                                            <Label Text="{Binding Title}" TextColor="#4a587d"/> 
+                                                        </VerticalStackLayout>
+                                                 </Border> 
+                                       </DataTemplate>
+                                    </syncListView:SfListView.ItemTemplate>
+                                    </syncListView:SfListView> 
+
+                            <!--Description title-->
+                            <Label Grid.Row="5" Grid.Column="0" 
+                                   Text="Description"
+                                   Padding="0,15"
+                                   FontAttributes="Bold"
+                                   FontSize="18"/>
+
+                             <!--Description-->
+                            <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="A deluxe room type in the hive condotel, a 4+ star hotel managed by Best Western Premier group. A deluxe room type in the hive condotel, a 4+ star hotel managed by Best Western Premier group." 
+                                   Padding="0,0,0,30"
+                                   FontAttributes="Bold" 
+                                   FontSize="16"/>
+
+                        </Grid>
+                   </Frame>
+
+                </Grid>
+             </ScrollView>
+
+            <!-- Floating Buttons -->  
+            <Button Grid.Row="1" Grid.Column="0"
+                    HeightRequest="55"
+                    WidthRequest="55"
+                    ImageSource="heart"
+                    VerticalOptions="End"
+                    BackgroundColor="White"
+                    Margin="30,0">
+                <Button.Shadow>
+                      <Shadow Brush="Silver"
+                              Offset="5,5"
+                              Radius="20"
+                              Opacity="0.9"/>
+
+                </Button.Shadow>
+             </Button>
+            <Button Grid.Row="1" Grid.Column="1"
+                    Margin="0,0,30,0"
+                    Text="Book Now"
+                    HeightRequest="55" 
+                    VerticalOptions="End"
+                    BackgroundColor="#2094ff">
+                <Button.Shadow>
+                      <Shadow Brush="Silver"
+                              Offset="5,5"
+                              Radius="20"
+                              Opacity="0.9"/>
+
+                </Button.Shadow>
+             </Button>
+
+
+        </Grid>
+</ContentPage>

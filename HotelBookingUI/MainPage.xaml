@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelBookingUI.MainPage">
+
+    <Grid RowDefinitions="*"
+          ColumnDefinitions="Auto,*"
+          Margin="0,-120,0,0"
+          Padding="0,0,0,10"> 
+            
+            <ScrollView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">   
+                 <Grid RowDefinitions="Auto,*">
+                    <!-- Main Image-->
+                    <Image Grid.Row="0" Source="hotelmodel.jpeg"
+                           Aspect="AspectFill"
+                           VerticalOptions="Start" 
+                           HeightRequest="400"/>
+
+                     <!--White Box-->
+                     <Frame Grid.Row="1" CornerRadius="40" HasShadow="False" Margin="0,-40,0,0" BorderColor="Transparent">
+                        <Grid RowDefinitions="Auto,*,Auto,*,Auto,*,*" 
+                              ColumnDefinitions="*,Auto" Padding="20">
+
+                            <!--Hotel name-->
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="Hotel LigthSky"
+                                   FontSize="22"/>
+
+                            <!--Price-->
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="128$"
+                                   HorizontalTextAlignment="End"
+                                   FontSize="22"/> 
+
+                            <!--Hotel description-->
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="2 guest 1 bedroom 1 bath"
+                                   Margin="0,10,0,0"
+                                   TextColor="Silver"/>
+                      
+                            <!--Price description-->
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   Text="per person"
+                                   Margin="0,10,0,0"
+                                   TextColor="Silver"/>
+                             <!--Reviews-->
+                            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderColor="Transparent" CornerRadius="10" HasShadow="False" BackgroundColor="#f2f6fc" HeightRequest="80">
+                                <Grid RowDefinitions="Auto,Auto,*" ColumnDefinitions="Auto,*" RowSpacing="7" Padding="10,0">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="⭐⭐⭐⭐"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="129 reviews" VerticalTextAlignment="Center" TextColor="#70747a"/>
+                                    <Image Grid.Row="1" Grid.Column="1" Source="arrow" HorizontalOptions="Start"/>
+
+                                </Grid>
+                            </Frame>
+                            
+                        </Grid>
+                   </Frame>
+
+                </Grid>
+             </ScrollView>
+
+            <!-- Botones -->  
+            <Button Grid.Row="1" Grid.Column="0"
+                    HeightRequest="55"
+                    WidthRequest="55"
+                    ImageSource="heart"
+                    VerticalOptions="End"
+                    BackgroundColor="White"
+                    Margin="30,0">
+                <Button.Shadow>
+                      <Shadow Brush="Silver"
+                              Offset="5,5"
+                              Radius="20"
+                              Opacity="0.9"/>
+
+                </Button.Shadow>
+             </Button>
+            <Button Grid.Row="1" Grid.Column="1"
+                    Margin="0,0,30,0"
+                    Text="Book Now"
+                    HeightRequest="55" 
+                    VerticalOptions="End"
+                    BackgroundColor="#2094ff">
+                <Button.Shadow>
+                      <Shadow Brush="Silver"
+                              Offset="5,5"
+                              Radius="20"
+                              Opacity="0.9"/>
+
+                </Button.Shadow>
+             </Button>
+
+
+        </Grid>
+</ContentPage>
+
