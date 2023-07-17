@@ -8,11 +8,13 @@
      <!-- Main layout -->
      <Grid RowDefinitions="*"
            ColumnDefinitions="Auto,*"
-           Margin="0,-120,0,50"> 
+           Margin="0,-120,0,0"> 
             <!-- Step 1:  Rounded border & Floating Buttons-->
             <ScrollView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Never">   
                  <Grid RowDefinitions="Auto,*">
                     <!-- Main Image-->
+                    <!--Hotel name-->
+                           
                     <Image Grid.Row="0" Source="hotelmodel.jpeg"
                            Aspect="AspectFill"
                            VerticalOptions="Start" 
@@ -24,10 +26,8 @@
                               ColumnDefinitions="*,Auto" Padding="20,20,20,60">
 
                             <!-- Step 2: Hotel Descripcion-->
-
-                            <!--Hotel name-->
-                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                                   Text="Hotel LigthSky"
+                             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="Hotel LightSky"
                                    FontSize="22"/>
 
                             <!--Price-->
@@ -83,7 +83,7 @@
                                     </syncListView:SfListView> 
                                 </Grid>
                             </Frame>
-
+                             
                             <!-- Step 3: Hotel Offers-->
                             <!-- Offers: Title -->
                             <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"

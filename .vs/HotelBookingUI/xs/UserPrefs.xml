@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{C8C9554E-0003-4DEC-9352-F9A8F81F4490}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HotelBookingUI/Views/DetailPage.xaml">
+    <Files>
+      <File FileName="HotelBookingUI/Views/DetailPage.xaml" Line="13" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.HotelBookingUI PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9C63F73-5B56-48F7-BC5A-785A90642927" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9C63F73-5B56-48F7-BC5A-785A90642927" />
+</Properties>
